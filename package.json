@@ -1,7 +1,7 @@
 {
   "name": "wd-tap-runner",
   "version": "0.0.0",
-  "description": "Easily run TAP unit tests in the browser with WebDriver",
+  "description": "Automate TAP browser unit tests with WebDriver",
   "keywords": [
     "wd",
     "tap",
