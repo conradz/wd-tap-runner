@@ -72,8 +72,9 @@ function runner(src, browser, options, callback) {
     }
 
     function runTests() {
-        var url = 'http://localhost:' + port + '/';
-        wdTap(url, browser, testsComplete);
+        var url = 'http://localhost:' + port + '/',
+            testOptions = { timeout: options.timeout };
+        wdTap(url, browser, testOptions, testsComplete);
     }
 
     function testsComplete(err, data) {
