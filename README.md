@@ -1,7 +1,9 @@
 # wd-tap-runner
 
 Easily run TAP-producing JS unit tests in the browser, automated by WebDriver
-with Node.js.
+with Node.js. This is a helper module for
+[wd-tap](https://npmjs.org/package/wd-tap), this module sets up the test page
+and HTTP server for you.
 
 ## Example
 
@@ -40,3 +42,6 @@ TAP test results, parsed using
 [tap-parser](https://npmjs.org/package/tap-parser). Note that the error will
 be null even if some tests failed; the results indicate what tests passed or
 failed.
+
+TAP results can be written to the browser's console. The test page
+automatically displays any output written using `console.log`.
