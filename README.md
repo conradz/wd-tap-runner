@@ -1,6 +1,7 @@
 # wd-tap-runner
 
 [![Build Status](https://travis-ci.org/conradz/wd-tap-runner.png?branch=master)](https://travis-ci.org/conradz/wd-tap-runner)
+[![Dependency Status](https://gemnasium.com/conradz/wd-tap-runner.png)](https://gemnasium.com/conradz/wd-tap-runner)
 
 Easily run TAP-producing JS unit tests in the browser, automated by WebDriver
 with Node.js. This is a helper module for
