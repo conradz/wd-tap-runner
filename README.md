@@ -5,7 +5,8 @@
 Easily run TAP-producing JS unit tests in the browser, automated by WebDriver
 with Node.js. This is a helper module for
 [wd-tap](https://npmjs.org/package/wd-tap), this module sets up the test page
-and HTTP server for you.
+and HTTP server for you (using
+[serve-script](https://npmjs.org/package/serve-script)).
 
 ## Example
 

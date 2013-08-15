@@ -1,34 +1,6 @@
 var http = require('http'),
-    wdTap = require('wd-tap');
-
-var testPage = [
-    '<!DOCTYPE html>',
-    '<html>',
-    '<head>',
-        '<title>Tests</title>',
-    '</head>',
-    '<body>',
-        '<pre id="output"></pre>',
-        '<script>',
-        '// Redirect console output',
-        '(function() {',
-            'var console, oldLog;',
-            'var output = document.getElementById("output");',
-            'function log(text) {',
-                'if (oldLog) { oldLog.apply(console, arguments); }',
-                'output.appendChild(document.createTextNode(text + "\\r\\n"));',
-            '}',
-            '',
-            'if (window.console) { console = window.console; }',
-            'else { window.console = console = {}; }',
-            'oldLog = console.log;',
-            'console.log = log;',
-        '})();',
-        '</script>',
-        '<script src="/tests.js"></script>',
-    '</body>',
-    '</html>'
-].join('\r\n');
+    wdTap = require('wd-tap'),
+    serve = require('serve-script');
 
 function runner(src, browser, options, callback) {
     if (typeof options === 'function') {
@@ -37,30 +9,13 @@ function runner(src, browser, options, callback) {
     }
 
     var port = 8000,
+        app = serve({ src: src }),
         server = http.createServer(app);
     if (typeof options.port !== 'undefined') {
         port = options.port;
     }
 
     startServer();
-
-    function app(req, resp) {
-        if (req.url === '/') {
-            resp.setHeader('Content-Type', 'text/html; charset=utf-8');
-            resp.end(testPage, 'utf8');
-        } else if (req.url === '/tests.js') {
-            resp.setHeader('Content-Type', 'text/javascript; charset=utf-8');
-            if (typeof src.pipe === 'function') {
-                src.pipe(resp);
-            } else {
-                resp.end(src, 'utf8');
-            }
-        } else {
-            resp.statusCode = 404;
-            resp.setHeader('Content-Type', 'text/plain');
-            resp.end('Not Found');
-        }
-    }
 
     function startServer() {
         server.listen(port, function(err) {
@@ -78,13 +33,9 @@ function runner(src, browser, options, callback) {
     }
 
     function testsComplete(err, data) {
-        stopServer(function() {
+        server.close(function() {
             callback(err, data);
         });
-    }
-
-    function stopServer(callback) {
-        server.close(callback);
     }
 }
 
