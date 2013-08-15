@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "async": "~0.2.9",
-    "wd": "0.0.34",
+    "wd": "~0.1.0",
     "sauce-connect-launcher": "~0.1.11"
   }
 }
