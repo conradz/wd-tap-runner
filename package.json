@@ -30,6 +30,7 @@
   "devDependencies": {
     "async": "~0.2.9",
     "wd": "0.0.34",
-    "sauce-tunnel": "~1.0.1"
+    "sauce-tunnel": "~1.0.1",
+    "sauce-connect-launcher": "~0.1.11"
   }
 }
