@@ -57,12 +57,12 @@ function startTunnel(callback) {
         tunnelIdentifier: id
     };
 
-    sauceConnect(options, function(err, connect) {
+    sauceConnect(options, function(err, t) {
         if (err) {
             callback(err);
         }
 
-        tunnel = connect;
+        tunnel = t;
         console.log('Tunnel opened');
         callback();
     });
