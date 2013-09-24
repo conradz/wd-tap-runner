@@ -15,6 +15,8 @@ function runner(src, browser, options, callback) {
         port = options.port;
     }
 
+    server.timeout = options.serverTimeout || 1000;
+
     startServer();
 
     function startServer() {

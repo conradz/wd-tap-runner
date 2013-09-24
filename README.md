@@ -50,6 +50,8 @@ the document.
  * `port`: The port the HTTP server will use
  * `timeout`: The timeout for the tests (in seconds). See the
    [wd-tap](https://github.com/conradz/wd-tap) documentation.
+ * `serverTimeout`: The timeout for HTTP connections to the server. Default
+   2000 (milliseconds).
 
 `callback` will be called with either an error or the TAP test results, parsed
 using [tap-parser](https://npmjs.org/package/tap-parser). Note that the error
