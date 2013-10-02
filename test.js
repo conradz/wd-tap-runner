@@ -1,6 +1,7 @@
 var async = require('async'),
     wd = require('wd'),
     sauceConnect = require('sauce-connect-launcher'),
+    TapProducer = require('tap').Producer,
     runner = require('./');
 
 var testSrc = [
@@ -106,6 +107,10 @@ function test(callback) {
             console.error(err);
             return callback();
         }
+
+        var output = TapProducer.encode(results);
+        console.log('TAP Results:');
+        console.log(output);
 
         if (!results.ok) {
             console.error('Tests did not pass');
