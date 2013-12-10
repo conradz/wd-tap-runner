@@ -3,7 +3,7 @@
 [![NPM](https://nodei.co/npm/wd-tap-runner.png?compact=true)](https://nodei.co/npm/wd-tap-runner/)
 
 [![Build Status](https://drone.io/github.com/conradz/wd-tap-runner/status.png)](https://drone.io/github.com/conradz/wd-tap-runner/latest)
-[![Dependency Status](https://gemnasium.com/conradz/wd-tap-runner.png)](https://gemnasium.com/conradz/wd-tap-runner)
+[![Dependency Status](https://david-dm.org/conradz/wd-tap-runner.png)](https://david-dm.org/conradz/wd-tap-runner)
 
 Easily run TAP-producing JS unit tests in the browser, automated by WebDriver
 with Node.js. This is a helper module for
