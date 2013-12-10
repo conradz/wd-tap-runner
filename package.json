@@ -24,8 +24,8 @@
     "url": "https://github.com/conradz/wd-tap-runner/issues"
   },
   "dependencies": {
-    "wd-tap": "0.1.0",
-    "serve-script": "0.1.0"
+    "wd-tap": "~0.1.0",
+    "serve-script": "~0.1.1"
   },
   "devDependencies": {
     "async": "~0.2.9",
