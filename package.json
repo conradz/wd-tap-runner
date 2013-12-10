@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "wd-tap": "0.1.0",
-    "serve-script": "0.0.7"
+    "serve-script": "0.1.0"
   },
   "devDependencies": {
     "async": "~0.2.9",
